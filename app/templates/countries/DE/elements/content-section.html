@@ -1,0 +1,41 @@
+<!-- content-section.html start -->
+
+<section id="seo-content" class="step1">
+  <div class="container">
+    <div class="row">
+      <div class="padding-top">
+        <article>
+
+<%
+if (HeadlineH2) {
+%>
+
+          <h2 class="h3"><%= HeadlineH2 %></h2>
+
+<%
+}
+
+SeoContent.forEach(function(item) {
+%>
+
+<%- include('./seo-content.html', item); %>
+
+<%
+});
+
+AnchorContent.forEach(function(item) {
+%>
+
+<%- include('./anchor-content.html', item) %>
+
+<%
+});
+%>
+
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- content-section.html end -->

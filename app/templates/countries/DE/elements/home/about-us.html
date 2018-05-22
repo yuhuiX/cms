@@ -1,0 +1,52 @@
+<!-- home/about-us.html start -->
+
+<%
+if (typeof AboutUsHeadline === 'undefined') {
+  AboutUsHeadline = '';
+}
+if (typeof AboutUsParagraphs === 'undefined') {
+  AboutUsParagraphs = [];
+}
+if (typeof ContactHeadline === 'undefined') {
+  ContactHeadline = '';
+}
+if (typeof ContactDetails === 'undefined') {
+  ContactDetails = {};
+}
+%>
+
+
+
+<section id="about-us">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <h2 class="h3 text-align-center">
+          <%= AboutUsHeadline %>
+        </h2>
+
+<%
+AboutUsParagraphs.forEach(function(paragraph, index) {
+  if (index !== 0) {
+%>
+
+        <br><br>
+
+<%
+  }
+%>
+        <p><%= paragraph %></p>
+<%
+});
+%>
+      </div>
+
+      <div class="col-xs-12 visible-xs visible-sm"><hr></div>
+
+<%- include('./contact-details.html', ContactDetails); %>
+
+    </div>
+  </div>
+</section>
+
+<!-- home/about-us.html end -->

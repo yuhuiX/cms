@@ -1,0 +1,45 @@
+<!-- home/service-pages-section-1.html start -->
+
+<%
+if (typeof ServicePageList === 'undefined') {
+  ServicePageList = [];
+}
+if (typeof SelectionHintShort === 'undefined') {
+  SelectionHintShort = '';
+}
+%>
+
+<section class="call-to-action blue step1">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 padding-top padding-bottom text-align-center">
+        <span class="h3 text-align-center white">
+          <%- ServicePageHeadline1 %>
+        </span>
+        <div class="dropdown service-lp-selection hidden-xs">
+          <button class="btn btn-lg btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+            <span>
+              <%= SelectionHintLong %>
+            </span>
+            <span class="caret"></span>
+          </button>
+
+<%- include('./service-pages-list.html', {ServicePageList: ServicePageList}); %>
+
+        </div>
+
+<%
+var ServicePagesDropdownData = {
+  SelectionHintShort: SelectionHintShort,
+  ServicePageList: ServicePageList,
+};
+%>
+
+<%- include('./service-pages-dropdown.html', ServicePagesDropdownData); %>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- home/service-pages-section-1.html end -->

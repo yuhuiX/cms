@@ -1,0 +1,35 @@
+<!-- impress/main-content.html start -->
+
+<%
+if (typeof ImpressMainContent === 'undefined') {
+  ImpressMainContent = [];
+}
+
+ImpressMainContent.forEach(function(item) {
+  var ImpressItemLabel = item.ImpressItemLabel;
+  var ImpressItemValue = item.ImpressItemValue;
+
+  if (!ImpressItemLabel && !ImpressItemValue) {
+%>
+
+<br>
+
+<%
+  } else {
+%>
+
+<div class="row">
+  <div class="col-md-2">
+    <strong><%- ImpressItemLabel %></strong>
+  </div>
+  <div class="col-md-10">
+    <%- ImpressItemValue %>
+  </div>
+</div>
+
+<%
+  }
+});
+%>
+
+<!-- impress/main-content.html end -->

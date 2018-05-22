@@ -1,0 +1,97 @@
+<!-- seo-content.html start -->
+
+<%
+if (typeof SeoImageAndDescription === 'undefined') {
+  SeoImageAndDescription = {};
+}
+if (typeof SeoList === 'undefined') {
+  SeoList = [];
+}
+if (typeof SeoSimpleText === 'undefined') {
+  SeoSimpleText = '';
+}
+if (typeof SeoTable === 'undefined') {
+  SeoTable = '';
+}
+
+// as only one of the given types should be used
+var edited = false;
+%>
+
+
+<%
+if (!edited && SeoList && SeoList.length) {
+  edited = true;
+%>
+
+<ul>
+
+<%
+  SeoList.forEach(function(item) {
+%>
+
+  <li><%- item %></li>
+
+<%
+  });
+%>
+
+</ul>
+
+<%
+}
+%>
+
+<%
+if (!edited && SeoSimpleText && SeoSimpleText.Text) {
+  edited = true;
+
+  if (SeoSimpleText.Type === 'h3') {
+%>
+
+<h3><%- SeoSimpleText.Text %></h3>
+
+<%
+  } else if (SeoSimpleText.Type === 'h4') {
+%>
+
+<h4><%- SeoSimpleText.Text %></h4>
+
+<%
+  } else if (SeoSimpleText.Type === 'p') {
+%>
+
+<p><%- SeoSimpleText.Text %></p>
+
+<%
+  }
+%>
+
+<%
+}
+
+if (!edited && SeoImageAndDescription && SeoImageAndDescription.SeoImage) {
+  edited = true;
+%>
+
+<img
+  alt="<%= SeoImageAndDescription.SeoImageAltAndTitle %>"
+  class="img-responsive content-img"
+  src="<%- SeoImageAndDescription.SeoImage %>"
+  title="<%= SeoImageAndDescription.SeoImageAltAndTitle %>"
+>
+
+<%
+}
+
+if (!edited && SeoTable) {
+  edited = true;
+%>
+
+<%- include('./table.html', SeoTable); %>
+
+<%
+}
+%>
+
+<!-- seo-content.html end -->

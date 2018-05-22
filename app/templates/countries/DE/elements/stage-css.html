@@ -1,0 +1,112 @@
+<!-- stage-css.html start -->
+
+<style>
+<%
+if (typeof UseDefaultStageImages === 'undefined') {
+  UseDefaultStageImages = '';
+}
+if (typeof StageTextShadowColor === 'undefined') {
+  StageTextShadowColor = '';
+}
+if (typeof StageImageSmall === 'undefined') {
+  StageImageSmall = '';
+}
+if (typeof StageImageMedium === 'undefined') {
+  StageImageMedium = '';
+}
+if (typeof StageImageLarge === 'undefined') {
+  StageImageLarge = '';
+}
+
+function createStageImgUrl(url) {
+  var stageImageCSSStart = '#stage-content {background-image: url("';
+  var stageImageCSSEnd = '");}';
+  return stageImageCSSStart + url + stageImageCSSEnd;
+}
+
+if (UseDefaultStageImages && UseDefaultStageImages !== 'none') {
+%>
+
+@media (max-width: 767px) {
+  #stage-content {
+    background-image: url(/src/img/stage/default-stage-xs.jpg);
+  }
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  #stage-content {
+    background-image: url(/src/img/stage/default-stage-sm.jpg);
+  }
+}
+@media (min-width: 1200px) {
+  #stage-content {
+    background-image: url(/src/img/stage/default-stage-lg.jpg);
+  }
+}
+
+<%
+}
+if (StageTextShadowColor) {
+%>
+
+#stage .stage-slogan { text-shadow: 1px 2px 19px <%- StageTextShadowColor %>; }
+
+<%
+}
+if (!UseDefaultStageImages || UseDefaultStageImages === 'none') {
+  if (StageImageSmall !== '' && StageImageMedium === '' && StageImageLarge === '') {
+%>
+
+<%- createStageImgUrl(StageImageSmall) %>
+
+<%
+  } else if (StageImageSmall === '' && StageImageMedium !== '' && StageImageLarge === '') {
+%>
+
+<%- createStageImgUrl(StageimageMedium) %>
+
+<%
+  } else if (StageImageSmall === '' && StageImageMedium === '' && StageImageLarge !== '') {
+%>
+
+<%- createStageImgUrl(StageImageLarge) %>
+
+<%
+  } else {
+    if (StageImageSmall !== '' && (StageImageMedium !== '' || StageImageLarge !== '')) {
+%>
+
+@media (max-width: 767px) { <%- createStageImgUrl(StageImageSmall) %> }
+
+<%
+    }
+    if (StageImageMedium !== '') {
+      var media = '@media ';
+      if (StageImageSmall !== '') {
+        media += '(min-width: 768px)';
+        if (StageImageLarge !== '') {
+          media += ' and ';
+        }
+      }
+      if (StageImageLarge !== '') {
+        media += '(max-width: 1199px)';
+      }
+      // TODO: Test the case when StageImageSmall is not given and StageImageLarge is given. we have to check 'and'.
+%>
+
+<%- media %> { <%- createStageImgUrl(StageImageMedium) %> }
+
+<%
+    }
+    if (StageImageLarge !== '') {
+%>
+
+@media (min-width: 1200px) { <%- createStageImgUrl(StageImageLarge) %> }
+
+<%
+    }
+  }
+}
+%>
+</style>
+
+<!-- stage-css.html end -->

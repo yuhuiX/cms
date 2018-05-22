@@ -1,0 +1,81 @@
+<!-- table.html start -->
+
+<%
+if (typeof THead === 'undefined') {
+  THead = [];
+}
+if (typeof TBody === 'undefined') {
+  TBody = [];
+}
+
+var numCols = 0;
+var numHeads = THead.length;
+if (TBody.length > 0) {
+  numCols = TBody[TBody.length - 1].length;
+}
+%>
+
+<table style="width:100%; border-color: #b4bcc8;" border="1">
+  <thead>
+    <tr style="background-color: #333333; color: #ffffff;">
+
+<%
+var colspan = '';
+var align = '';
+if (numCols >= 3) {
+  align = 'align="center"';
+}
+THead.forEach(function(item, index) {
+  if (index === numHeads - 1 && numCols > numHeads) {
+    colspan = 'colspan="' + (numCols - numHeads + 1) + '"';
+  }
+%>
+
+      <td style="padding-top:3px; padding-bottom:3px;" <%- colspan %> <%- align %>>
+        <strong><%- item %></strong>
+      </td>
+
+<%
+});
+%>
+
+    </tr>
+  </thead>
+  <tbody>
+
+<%
+TBody.forEach(function(row) {
+%>
+
+    <tr>
+
+<%
+  row.forEach(function(item) {
+    if (item === '') {
+      item = '&nbsp;';
+    }
+%>
+
+      <td
+        style="padding-top:3px; padding-bottom:3px;"
+        <%- align %>
+      >
+
+<%- item %>
+
+      </td>
+
+<%
+  });
+%>
+
+    </tr>
+
+<%
+});
+%>
+
+  </tbody>
+</table>
+
+<!-- table.html end -->

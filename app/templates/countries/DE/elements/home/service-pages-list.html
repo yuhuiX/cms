@@ -1,0 +1,33 @@
+<!-- home/service-pages-list.html start -->
+
+<%
+if (ServicePageList.length) {
+%>
+
+<ul class="dropdown-menu copy-from">
+
+<%
+  ServicePageList.forEach(function(item) {
+    var PageName = item.PageName;
+    var PageLink = item.PageLink;
+%>
+
+    <li>
+      <a
+        href="<%= PageLink %>"
+      >
+        <%= PageName %>
+      </a>
+    </li>
+
+<%
+  });
+%>
+
+</ul>
+
+<%
+}
+%>
+
+<!-- home/service-pages-list.html end -->

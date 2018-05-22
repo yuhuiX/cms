@@ -1,0 +1,36 @@
+<!-- stage-content.html start -->
+
+<%
+if (typeof TopicText === 'undefined') {
+  TopicText = '';
+}
+if (typeof StageText === 'undefined') {
+  StageText = '';
+}
+%>
+
+<section id="stage-content" class="step1 step2">
+  <div class="container step1 step2">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="stage-slogan">
+
+<%
+if (TopicText) {
+%>
+
+        <h1 class="white topic-headline"><%= TopicText %></h1>
+
+<%
+}
+%>
+
+        <%- StageText %>
+
+      </div>
+    </div>
+   </div>
+  </div>
+</section>
+
+<!-- stage-content.html end -->

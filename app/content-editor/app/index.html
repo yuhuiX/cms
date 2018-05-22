@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<% if (typeof files === 'undefined') {
+  files = [];
+}%>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CMS Pages</title>
+    <link rel="stylesheet" href="src/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Pages</h1>
+      <div class="list-group">
+
+<%
+files.forEach(function(file) {
+  var pageName = file.pageName;
+  var configPath = file.configPath;
+%>
+
+        <a
+          class="list-group-item"
+          href="?pagePath=<%- pageName %>"
+        >
+          <strong><%- pageName %></strong> <small>(<%- configPath %>)</small>
+        </a>
+
+<%
+});
+%>
+
+      </div>
+    </div>
+  </body>
+</html>

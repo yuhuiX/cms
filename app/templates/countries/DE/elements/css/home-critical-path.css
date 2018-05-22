@@ -1,0 +1,155 @@
+#stage-content {
+	background-position: center center;
+}
+.stage-slogan h1 {
+	margin: 0;
+}
+.type-1 {
+	text-align:center;
+}
+
+.text-align-center {
+	text-align: center;
+}
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+.home .h3 {
+    clear: both;
+    /*color: #333;*/
+	font-size: 34px;
+    font-weight: 900;
+    padding-bottom: 45px;
+    /*padding-top: 18px;*/
+    position: relative;
+    text-transform: none;
+    display: block;
+}
+
+h5, .h5 {
+    font-size: 25px;
+}
+
+.blue {
+    color: #009ee0;
+}
+
+/********** how to details **********/
+.how-to-details ul li {
+	padding-bottom: 41px;
+}
+.how-to-details ul li .icon {
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 5px solid #009ee0;
+    background-color: #009ee0;
+    border-radius: 500px;
+    height: 78px;
+    padding: 5px;
+    width: 78px;
+    margin-bottom: 20px;
+}
+
+.how-to-details ul li .h5 {
+    margin: 0 0 13px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.how-to-details ul li .arrow::before {
+    content: url('/src/img/arrow.png');
+    position: absolute;
+    right: -45px;
+    top: 0px;
+    z-index: 1;
+}
+
+@media (min-height: 851px) {
+	.stage-slogan {
+		height: 600px;	/* fallback */
+		height: 68vm;	/* IE9 */
+		height: 68vmin;
+		max-height: 600px;
+	}
+}
+
+@media (min-height: 751px) and (max-height: 850px) {
+	.stage-slogan {
+		height: 555px;	/* fallback */
+		height: 65vm;	/* IE9 */
+		height: 65vmin;
+		max-height: 555px;
+	}
+}
+
+@media (min-height: 651px) and (max-height: 750px) {
+	.stage-slogan {
+		height: 450px;	/* fallback */
+		height: 60vm;	/* IE9 */
+		height: 60vmin;
+		max-height: 450px;
+	}
+}
+
+@media (max-height: 650px) {
+	.stage-slogan {
+		height: 360px;	/* fallback */
+		height: 55vm;	/* IE9 */
+		height: 55vmin;
+		max-height: 360px;
+	}
+}
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+	.stage-slogan.type-1 .title-1, .stage-slogan.type-1 .title-3 {
+		font-size: 24px;
+	}
+	.stage-slogan.type-1 .title-2 {
+		font-size: 38px;
+	}
+}
+/* Portrait tablets and small desktops, Landscape phones */
+@media (min-width: 701px) and (max-width: 991px) {
+	.stage-slogan.type-1 .title-1, .stage-slogan.type-1 .title-3 {
+		font-size: 20px;
+    	padding: 3px 7px;
+	}
+	.stage-slogan.type-1 .title-2 {
+		font-size: 30px;
+    	padding: 17px 17px;
+	}
+}
+/* Landscape phones and portrait tablets */
+@media (min-width: 601px) and (max-width: 700px) {
+	.stage-slogan.type-1 .title-1, .stage-slogan.type-1 .title-3 {
+		font-size: 16px;
+    	padding: 3px 7px;
+	}
+	.stage-slogan.type-1 .title-2 {
+		font-size: 25px;
+    	padding: 17px 17px;
+	}
+}
+@media (min-width: 481px) and (max-width: 600px) {
+	.stage-slogan.type-1 .title-1, .stage-slogan.type-1 .title-3 {
+		font-size: 15px;
+    	padding: 3px 7px;
+	}
+	.stage-slogan.type-1 .title-2 {
+		font-size: 20px;
+    	padding: 17px 17px;
+	}
+}
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+	.stage-slogan.type-1 .title-1, .stage-slogan.type-1 .title-3 {
+		font-size: 13px;
+    	padding: 3px 7px;
+	}
+	.stage-slogan.type-1 .title-2 {
+		font-size: 16px;
+    	padding: 17px 17px;
+	}
+}

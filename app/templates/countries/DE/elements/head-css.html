@@ -1,0 +1,49 @@
+<!-- head-css.html start -->
+
+<%
+if (typeof Stage === 'undefined') {
+  Stage = 0;
+}
+if (typeof AdditionalCriticalPathCssFile === 'undefined') {
+  AdditionalCriticalPathCssFile = [];
+}
+%>
+
+<style type="text/css">
+
+<%- include('./css/critical-path.css') %>
+
+<%
+if (_templateFile === 'home-page.html') {
+%>
+
+<%- include('./css/home-critical-path.css') %>
+
+<%
+} else {
+  AdditionalCriticalPathCssFile.forEach(function(obj) {
+    if (obj.CriticalPathCssFile && obj.CriticalPathCssFile !== '') {
+      // TODO: use paths from template or rather from website repo?
+%>
+
+<%- include( '../../../../dist' + obj.CriticalPathCssFile ) %>
+
+<%
+    }
+  });
+}
+%>
+
+</style>
+
+<%
+if (Stage) {
+%>
+
+<%- include('./stage-css.html', Stage) %>
+
+<%
+};
+%>
+
+<!-- head-css.html end -->

@@ -1,0 +1,34 @@
+<!-- breadcrumb.html start -->
+
+<%
+if (typeof PageLink === 'undefined') {
+  PageLink = '';
+}
+if (typeof TitleAttribute === 'undefined') {
+  TitleAttribute = '';
+}
+
+if (PageName) {
+  if (PageLink) {
+%>
+
+<li itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="">
+  <a href="<%- PageLink %>" title="<%= TitleAttribute %>" itemprop="url">
+    <span itemprop="title"><%= PageName %></span>
+  </a>
+</li>
+
+<%
+  } else {
+%>
+
+<li>
+  <span class="white"><%= PageName %></span>
+</li>
+
+<%
+  }
+}
+%>
+
+<!-- breadcrumb.html end -->

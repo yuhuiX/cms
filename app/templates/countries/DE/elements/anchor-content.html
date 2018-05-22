@@ -1,0 +1,50 @@
+<!-- anchor-content.html start -->
+
+<%
+if (typeof AnchorHeadline === 'undefined') {
+  AnchorHeadline = '';
+}
+if (typeof AnchorLinks === 'undefined') {
+  AnchorLinks = [];
+}
+%>
+
+<hr />
+
+<%
+if (AnchorHeadline !== '') {
+%>
+
+<span class="h5"><%= AnchorHeadline %></span>
+
+<%
+}
+
+if (AnchorLinks.length > 0) {
+%>
+
+<ul class="list-unstyled list-links">
+
+<%
+  AnchorLinks.forEach(function(anchorLink) {
+    if (anchorLink.LinkedText && anchorLink.LinkURL) {
+%>
+
+  <li>
+    <a href="<%= anchorLink.LinkURL %>" title="<%= anchorLink.LinkTitle %>">
+      <%= anchorLink.LinkedText %>
+    </a>
+  </li>
+
+<%
+    }
+  });
+%>
+
+</ul>
+
+<%
+}
+%>
+
+<!-- anchor-content.html end -->

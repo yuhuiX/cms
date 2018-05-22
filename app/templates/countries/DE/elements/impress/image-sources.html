@@ -1,0 +1,28 @@
+<!-- impress/image-sources.html start -->
+
+<%
+if (typeof ImageSourcePages === 'undefined') {
+  ImageSourcePages = [];
+}
+%>
+
+<span class="h5"><%- ImageSourcesHeadline %></span>
+
+<ul class="list-unstyled list-links">
+<%
+ImageSourcePages.forEach(function(item) {
+  var PageLink = item.PageLink;
+  var PageName = item.PageName;
+  var TitleAttribute = item.TitleAttribute;
+%>
+
+  <li>
+    <a href="<%- PageLink %>" title="<%- TitleAttribute %>"><%- PageName %></a>
+  </li>
+
+<%
+});
+%>
+</ul>
+
+<!-- impress/image-sources.html end -->

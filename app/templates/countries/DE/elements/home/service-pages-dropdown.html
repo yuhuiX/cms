@@ -1,0 +1,34 @@
+<!-- home/service-pages-dropdown.html start -->
+
+<%
+if (ServicePageList.length) {
+%>
+
+<select name="service-lp-selection" class="center-block form-control visible-xs">
+  <option value="">
+    <%= SelectionHintShort %>
+  </option>
+
+<%
+  ServicePageList.forEach(function(item) {
+    var PageName = item.PageName;
+    var PageLink = item.PageLink;
+%>
+
+  <option
+    value="<%= PageLink %>"
+  >
+    <%= PageName %>
+  </option>
+
+<%
+  });
+%>
+
+</select>
+
+<%
+}
+%>
+
+<!-- home/service-pages-dropdown.html end -->
