@@ -1,6 +1,6 @@
 {
-  "name": "portal-templates",
-  "version": "0.10.2",
+  "name": "cms",
+  "version": "0.1.0",
   "description": "FG Portal templates for different countries",
   "engines": {
     "node": ">=8.9.1"
