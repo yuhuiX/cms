@@ -16,8 +16,8 @@ module.exports = (pagePath) => {
   let schema;
   let startval;
   if (contentConfig) {
-    const templateFile = contentConfig._templateFile;
-    startval = JSON.stringify(contentConfig);
+    const templateFile = contentConfig.data._templateFile;
+    startval = JSON.stringify(contentConfig.data);
 
     if (templateFile) {
       const index = templateFile.lastIndexOf('.');

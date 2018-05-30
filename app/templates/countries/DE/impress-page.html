@@ -3,14 +3,14 @@
 <!DOCTYPE html>
 <html lang="cs-DE">
 
-<%- include('./elements/head.html'); %>
+<%- include('./elements/head.html', {data}); %>
 
   <body>
     <div class="content-wrapper">
 
 <%- include('./elements/header.html'); %>
 
-<%- include('./elements/impress/content.html'); %>
+<%- include('./elements/impress/content.html', {data}); %>
 
     </div>
 

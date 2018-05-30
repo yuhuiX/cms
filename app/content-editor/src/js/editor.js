@@ -2,52 +2,6 @@
 /* eslint-env browser */
 
 /**
- * @description clean up content in SeoContent.
- *    For each of it's items, if a property has value,
- *    being an empty object, or empty array,
- *    then this property would be removed from the item.
- * @param {object} contentConfig
- * @return {object}
- */
-function cleanSeoContent(contentConfig) {
-  var SeoContent = contentConfig.SeoContent;
-  if (SeoContent && SeoContent.length) {
-    SeoContent.forEach(function(seoContentItem) {
-      var keys = Object.keys(seoContentItem);
-      keys.forEach(function(key) {
-        var value = seoContentItem[key];
-        var itemShouldBeRemoved = false;
-
-        // test array
-        if (value && value.length === 0) {
-          itemShouldBeRemoved = true;
-        }
-
-        // test object
-        if (
-          value &&
-          Object.keys(value).length === 0 &&
-          value.constructor === Object
-        ) {
-          itemShouldBeRemoved = true;
-        }
-
-        // test empty string
-        if (value === '') {
-          itemShouldBeRemoved = true;
-        }
-
-        if (itemShouldBeRemoved) {
-          delete seoContentItem[key];
-        }
-      });
-    });
-  }
-
-  return contentConfig;
-}
-
-/**
  * @description disable given field in the editor
  * @param {string} field
  * @return {undefined}
@@ -123,7 +77,9 @@ $('#preview').bind('click', function() {
 });
 
 $('#submit').bind('click', function() {
-  var contentConfig = cleanSeoContent(editor.getValue());
+  let contentConfig = {
+    data: editor.getValue(),
+  };
   contentConfig = setLastModified(contentConfig);
   var pagePath = getQueryParam('pagePath');
 

@@ -1,12 +1,11 @@
 <!-- head-css.html start -->
 
 <%
-if (typeof Stage === 'undefined') {
-  Stage = 0;
-}
-if (typeof AdditionalCriticalPathCssFile === 'undefined') {
-  AdditionalCriticalPathCssFile = [];
-}
+const {
+  _templateFile,
+  AdditionalCriticalPathCssFile = [],
+  Stage = 0,
+} = data;
 %>
 
 <style type="text/css">

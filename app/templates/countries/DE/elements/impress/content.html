@@ -1,14 +1,30 @@
 <!-- impress/content.html start -->
 
+<%
+const {
+  ImageSourcePages,
+  ImageSourcesHeadline,
+  ImpressHeadline,
+  ImpressMainContent,
+} = data;
+%>
+
 <div class="container">
   <article>
     <h2 class="h3"><%= ImpressHeadline %></h2>
 
-<%- include('./main-content.html') %>
+<%- include('./main-content.html', {
+  data: {ImpressMainContent}
+}) %>
 
     <hr/>
 
-<%- include('./image-sources.html') %>
+<%- include('./image-sources.html', {
+  data: {
+    ImageSourcePages,
+    ImageSourcesHeadline,
+  },
+}) %>
 
   </article>
 </div>

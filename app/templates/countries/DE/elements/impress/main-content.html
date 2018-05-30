@@ -1,13 +1,15 @@
 <!-- impress/main-content.html start -->
 
 <%
-if (typeof ImpressMainContent === 'undefined') {
-  ImpressMainContent = [];
-}
+const {
+  ImpressMainContent = [],
+} = data;
 
 ImpressMainContent.forEach(function(item) {
-  var ImpressItemLabel = item.ImpressItemLabel;
-  var ImpressItemValue = item.ImpressItemValue;
+  const {
+    ImpressItemLabel,
+    ImpressItemValue,
+  } = item;
 
   if (!ImpressItemLabel && !ImpressItemValue) {
 %>
