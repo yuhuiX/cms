@@ -15,14 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@gitlab.mcon-group.com:fairgarage-portal/portal-templates.git"
+    "url": "https://github.com/yuhuiX/cms.git"
   },
-  "author": "Yuhui.Xiong@mcon-group.com",
+  "author": "Yuhui Xiong",
   "license": "ISC",
   "dependencies": {
     "ajv": "6.0.0",
     "bluebird": "3.5.0",
-    "ejs-renderer": "https://github.com/YuhuiCF/ejs-renderer.git#1.0.0",
+    "ejs-renderer": "https://github.com/yuhuiX/ejs-renderer.git#1.1.0",
     "express": "4.16.2",
     "html-minifier": "3.5.7",
     "koa": "2.5.1",
@@ -32,7 +32,7 @@
     "koa-router": "7.4.0",
     "koa-static": "4.0.2",
     "rimraf": "2.6.2",
-    "version-patch": "https://github.com/YuhuiCF/version-patch.git#3.1.2"
+    "version-patch": "https://github.com/yuhuiX/version-patch.git#3.1.2"
   },
   "devDependencies": {
     "clean-css": "4.1.11",
