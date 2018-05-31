@@ -1,9 +1,22 @@
 <!-- home/content.html start -->
 
-<%- include('./service-pages-section-1.html', ServicePages); %>
+<%
+const {
+  AboutUsSection = {},
+  ServicePages = {},
+} = data;
+%>
 
-<%- include('./service-pages-section-2.html', ServicePages); %>
+<%- include('./service-pages-section-1.html', {
+  data: ServicePages,
+}); %>
 
-<%- include('./about-us.html', AboutUsSection); %>
+<%- include('./service-pages-section-2.html', {
+  data: ServicePages,
+}); %>
+
+<%- include('./about-us.html', {
+  data: AboutUsSection,
+}); %>
 
 <!-- home/content.html end -->

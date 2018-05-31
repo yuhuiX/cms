@@ -1,7 +1,7 @@
 'use strict';
 
-const additionalCssFile = require('./additionalCssFile');
-const additionalJsFile = require('./additionalJsFile');
+const additionalCssFiles = require('./additionalCssFiles');
+const additionalJsFiles = require('./additionalJsFiles');
 const canonicalLinkPath = require('./canonicalLinkPath');
 const headFreeCode = require('./headFreeCode');
 const headlineH2 = require('./headlineH2');
@@ -14,8 +14,8 @@ const stage = require('./stage');
 const templateFile = require('./templateFile');
 
 module.exports = {
-  additionalCssFile,
-  additionalJsFile,
+  additionalCssFiles,
+  additionalJsFiles,
   canonicalLinkPath,
   headFreeCode,
   headlineH2,

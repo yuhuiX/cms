@@ -1,12 +1,12 @@
 <!-- home/service-pages-section-1.html start -->
 
 <%
-if (typeof ServicePageList === 'undefined') {
-  ServicePageList = [];
-}
-if (typeof SelectionHintShort === 'undefined') {
-  SelectionHintShort = '';
-}
+const {
+  SelectionHintLong,
+  SelectionHintShort,
+  ServicePageHeadline1,
+  ServicePageList,
+} = data;
 %>
 
 <section class="call-to-action blue step1">
@@ -24,18 +24,18 @@ if (typeof SelectionHintShort === 'undefined') {
             <span class="caret"></span>
           </button>
 
-<%- include('./service-pages-list.html', {ServicePageList: ServicePageList}); %>
+<%- include('./service-pages-list.html', {
+  data: {ServicePageList},
+}); %>
 
         </div>
 
-<%
-var ServicePagesDropdownData = {
-  SelectionHintShort: SelectionHintShort,
-  ServicePageList: ServicePageList,
-};
-%>
-
-<%- include('./service-pages-dropdown.html', ServicePagesDropdownData); %>
+<%- include('./service-pages-dropdown.html', {
+  data: {
+    SelectionHintShort,
+    ServicePageList,
+  },
+}); %>
 
       </div>
     </div>

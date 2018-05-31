@@ -4,12 +4,11 @@
 const {setPropertyOrder} = require('../../scripts');
 
 const {
-  additionalCssFile,
-  additionalJsFile,
+  additionalCssFiles,
+  additionalJsFiles,
   canonicalLinkPath,
   headFreeCode,
   headlineH2,
-  lastModified,
   metaDescription,
   metaKeywords,
   metaRobots,
@@ -31,8 +30,8 @@ module.exports = {
     HeadFreeCode: setPropertyOrder(headFreeCode, 120),
     Stage: setPropertyOrder(stage, 160),
     HeadlineH2: setPropertyOrder(headlineH2, 180),
-    AdditionalJsFile: setPropertyOrder(additionalJsFile, 240),
-    AdditionalCssFile: setPropertyOrder(additionalCssFile, 250),
+    AdditionalJsFiles: setPropertyOrder(additionalJsFiles, 240),
+    AdditionalCssFiles: setPropertyOrder(additionalCssFiles, 250),
     ServicePages: {
       type: 'object',
       description: 'listing important service landing pages',
@@ -130,6 +129,5 @@ module.exports = {
       },
       propertyOrder: 300,
     },
-    _lastModified: setPropertyOrder(lastModified, 10000),
   },
 };

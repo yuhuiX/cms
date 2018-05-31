@@ -1,12 +1,11 @@
 <!-- breadcrumb.html start -->
 
 <%
-if (typeof PageLink === 'undefined') {
-  PageLink = '';
-}
-if (typeof TitleAttribute === 'undefined') {
-  TitleAttribute = '';
-}
+const {
+  PageLink,
+  PageName,
+  TitleAttribute,
+} = data;
 
 if (PageName) {
   if (PageLink) {

@@ -1,21 +1,13 @@
 <!-- home/about-us.html start -->
 
 <%
-if (typeof AboutUsHeadline === 'undefined') {
-  AboutUsHeadline = '';
-}
-if (typeof AboutUsParagraphs === 'undefined') {
-  AboutUsParagraphs = [];
-}
-if (typeof ContactHeadline === 'undefined') {
-  ContactHeadline = '';
-}
-if (typeof ContactDetails === 'undefined') {
-  ContactDetails = {};
-}
+const {
+  AboutUsHeadline,
+  AboutUsParagraphs = [],
+  ContactHeadline,
+  ContactDetails = {},
+} = data;
 %>
-
-
 
 <section id="about-us">
   <div class="container">
@@ -35,7 +27,9 @@ AboutUsParagraphs.forEach(function(paragraph, index) {
 <%
   }
 %>
-        <p><%= paragraph %></p>
+        <p>
+          <%= paragraph %>
+        </p>
 <%
 });
 %>
@@ -43,7 +37,12 @@ AboutUsParagraphs.forEach(function(paragraph, index) {
 
       <div class="col-xs-12 visible-xs visible-sm"><hr></div>
 
-<%- include('./contact-details.html', ContactDetails); %>
+<%- include('./contact-details.html', {
+  data: {
+    ContactHeadline,
+    ...ContactDetails
+  },
+}); %>
 
     </div>
   </div>

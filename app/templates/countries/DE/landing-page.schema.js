@@ -4,12 +4,11 @@
 const {setPropertyOrder} = require('../../scripts');
 
 const {
-  additionalCssFile,
-  additionalJsFile,
+  additionalCssFiles,
+  additionalJsFiles,
   canonicalLinkPath,
   headFreeCode,
   headlineH2,
-  lastModified,
   metaDescription,
   metaKeywords,
   metaRobots,
@@ -222,8 +221,7 @@ module.exports = {
       },
       propertyOrder: 230,
     },
-    AdditionalJsFile: setPropertyOrder(additionalJsFile, 240),
-    AdditionalCssFile: setPropertyOrder(additionalCssFile, 250),
-    _lastModified: setPropertyOrder(lastModified, 10000),
+    AdditionalJsFiles: setPropertyOrder(additionalJsFiles, 240),
+    AdditionalCssFiles: setPropertyOrder(additionalCssFiles, 250),
   },
 };

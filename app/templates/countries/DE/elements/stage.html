@@ -1,12 +1,11 @@
 <!-- stage.html start -->
 
+
 <%
-if (typeof Stage === 'undefined') {
-  Stage = 0;
-}
-if (typeof Breadcrumb === 'undefined') {
-  Breadcrumb = [];
-}
+const {
+  Breadcrumb = [],
+  Stage,
+} = data;
 %>
 
 <div id="stage">
@@ -25,7 +24,9 @@ if (Breadcrumb.length > 0){
   Breadcrumb.forEach(function(item) {
 %>
 
-<%- include('./breadcrumb.html', item); %>
+<%- include('./breadcrumb.html', {
+  data: item,
+}); %>
 
 <%
   });

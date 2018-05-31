@@ -5,7 +5,6 @@ const {setPropertyOrder} = require('../../scripts');
 
 const {
   canonicalLinkPath,
-  lastModified,
   metaDescription,
   metaKeywords,
   metaRobots,
@@ -75,6 +74,5 @@ module.exports = {
       },
       propertyOrder: 140,
     },
-    _lastModified: setPropertyOrder(lastModified, 10000),
   },
 };

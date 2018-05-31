@@ -1,6 +1,11 @@
 <!-- home/service-pages-dropdown.html start -->
 
 <%
+const {
+  SelectionHintShort,
+  ServicePageList = [],
+} = data;
+
 if (ServicePageList.length) {
 %>
 
@@ -11,8 +16,10 @@ if (ServicePageList.length) {
 
 <%
   ServicePageList.forEach(function(item) {
-    var PageName = item.PageName;
-    var PageLink = item.PageLink;
+    const {
+      PageLink,
+      PageName,
+    } = item;
 %>
 
   <option

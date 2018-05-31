@@ -1,23 +1,20 @@
 <!-- scripts.html start -->
 
 <%
-if (typeof AdditionalCssFile === 'undefined') {
-  AdditionalCssFile = [];
-}
-if (typeof AdditionalJsFile === 'undefined') {
-  AdditionalJsFile = [];
-}
+const {
+  AdditionalCssFiles = [],
+  AdditionalJsFiles = [],
+} = data;
 
-function createPaths(varName, paths, key) {
-  var output = 'var ' + varName + ' = [';
-  paths.forEach(function(pathObj, i) {
-  if (i > 0) {
-	  output = output + ', "' + pathObj[key] + '"';
-  } else {
-  	output = output + '"' + pathObj[key] + '"';
-  }
-  });
-  return output + '];';
+function createPaths(varName, paths) {
+  const pathsString = paths
+    .map((path) => {
+      return `'${path}'`;
+    })
+    .join(',')
+  ;
+
+  return `const ${varName} = [${pathsString}];`;
 }
 %>
 
@@ -30,8 +27,8 @@ function createPaths(varName, paths, key) {
 
 <script type="text/javascript">
 
-<%- createPaths('additionalCss', AdditionalCssFile, 'CssFile'); %>
-<%- createPaths('additionalJs', AdditionalJsFile, 'JsFile'); %>
+<%- createPaths('additionalCss', AdditionalCssFiles); %>
+<%- createPaths('additionalJs', AdditionalJsFiles); %>
 
 <%- include('./js/critical-path.js'); %>
 

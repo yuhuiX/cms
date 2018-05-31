@@ -3,18 +3,18 @@
 <!DOCTYPE html>
 <html lang="de-DE">
 
-<%- include('./elements/head.html'); %>
+<%- include('./elements/head.html', {data}); %>
 
   <body class="home">
     <div class="content-wrapper">
 
-<%- include('./elements/header.html'); %>
+<%- include('./elements/header.html', {data}); %>
 
-<%- include('./elements/stage.html'); %>
+<%- include('./elements/stage.html', {data}); %>
 
       <div id="content">
 
-<%- include('./elements/home/content.html'); %>
+<%- include('./elements/home/content.html', {data}); %>
 
       </div>
 
@@ -22,7 +22,7 @@
 
     <footer></footer>
 
-<%- include('./elements/scripts.html'); %>
+<%- include('./elements/scripts.html', {data}); %>
 
   </body>
 

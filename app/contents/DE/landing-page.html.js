@@ -1,6 +1,7 @@
 'use strict';
 
 module.exports = {
+  data: {
   "_templateFile": "landing-page.html",
   "PageTitle": "landing page",
   "MetaDescription": "",
@@ -94,7 +95,7 @@ module.exports = {
       ]
     }
   ],
-  "AdditionalJsFile": [],
-  "AdditionalCssFile": [],
+  "AdditionalJsFiles": [],
+  "AdditionalCssFiles": [],},
   "_lastModified": 1526550779948
 };
