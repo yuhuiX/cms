@@ -1,18 +1,12 @@
 <!-- seo-content.html start -->
 
 <%
-if (typeof SeoImageAndDescription === 'undefined') {
-  SeoImageAndDescription = {};
-}
-if (typeof SeoList === 'undefined') {
-  SeoList = [];
-}
-if (typeof SeoSimpleText === 'undefined') {
-  SeoSimpleText = '';
-}
-if (typeof SeoTable === 'undefined') {
-  SeoTable = '';
-}
+const {
+  SeoImageAndDescription = {},
+  SeoList = [],
+  SeoSimpleText = '',
+  SeoTable = '',
+} = data;
 
 // as only one of the given types should be used
 var edited = false;
@@ -88,7 +82,7 @@ if (!edited && SeoTable) {
   edited = true;
 %>
 
-<%- include('./table.html', SeoTable); %>
+<%- include('./table.html', {data: SeoTable}); %>
 
 <%
 }

@@ -1,12 +1,10 @@
 <!-- table.html start -->
 
 <%
-if (typeof THead === 'undefined') {
-  THead = [];
-}
-if (typeof TBody === 'undefined') {
-  TBody = [];
-}
+const {
+  TBody = [],
+  THead = [],
+} = data;
 
 var numCols = 0;
 var numHeads = THead.length;

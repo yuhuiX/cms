@@ -10,57 +10,11 @@ const router = require('koa-router')();
 const serve = require('koa-static');
 
 const api = require('./app/js/api');
-const {
-  countryCode,
-  outputDirectory,
-} = require('./app/js/configs');
+const {outputDirectory} = require('./app/js/configs');
 
 const app = new Koa();
 app.use(helmet());
 app.use(bodyParser());
-
-// preview start
-/* app.use('/src/', express.static('./static/src/'));
-app.use(
-  '/src/',
-  express.static(path.resolve(__dirname, `./temp/${countryCode}/src/`))
-);
- */
-/*
-app.use(async (ctx, next) => {
-  if (ctx.path === '/src/') {
-    console.log('in /src/');
-    await send(ctx, ctx.path, {
-      root: __dirname + `./temp/${countryCode}/src/`,
-    });
-  } else {
-    await next();
-  }
-});
-// mapping on the target portal
-app.use(async (ctx, next) => {
-  if (ctx.path === '/src/') {
-    await send(ctx, ctx.path, {
-      root: __dirname + `./static/src/`,
-    });
-  } else {
-    await next();
-  }
-});
-app.use(async (ctx, next) => {
-  console.log('ctx.path');
-  console.log(ctx.path);
-  if (ctx.path.startsWith('/edit/src/')) {
-    console.log('ctx.path');
-    console.log(ctx.path);
-    await send(ctx, ctx.path, {
-      root: path.resolve(__dirname + `./src/`),
-    });
-  } else {
-    await next();
-  }
-});
- */
 
 app.use(mount(
   '/edit/src',

@@ -1,6 +1,5 @@
 <!-- stage.html start -->
 
-
 <%
 const {
   Breadcrumb = [],
@@ -47,7 +46,7 @@ if (Breadcrumb.length > 0){
 if (Stage) {
 %>
 
-<%- include('./stage-content.html', Stage); %>
+<%- include('./stage-content.html', {data: Stage}); %>
 
 <%
 }

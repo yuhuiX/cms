@@ -1,5 +1,13 @@
 <!-- content-section.html start -->
 
+<%
+const {
+  AnchorContent,
+  HeadlineH2,
+  SeoContent,
+} = data;
+%>
+
 <section id="seo-content" class="step1">
   <div class="container">
     <div class="row">
@@ -18,7 +26,7 @@ if (HeadlineH2) {
 SeoContent.forEach(function(item) {
 %>
 
-<%- include('./seo-content.html', item); %>
+<%- include('./seo-content.html', {data: item}); %>
 
 <%
 });
@@ -26,7 +34,7 @@ SeoContent.forEach(function(item) {
 AnchorContent.forEach(function(item) {
 %>
 
-<%- include('./anchor-content.html', item) %>
+<%- include('./anchor-content.html', {data: item}) %>
 
 <%
 });

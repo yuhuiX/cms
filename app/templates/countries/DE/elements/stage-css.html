@@ -1,29 +1,21 @@
 <!-- stage-css.html start -->
 
-<style>
 <%
-if (typeof UseDefaultStageImages === 'undefined') {
-  UseDefaultStageImages = '';
-}
-if (typeof StageTextShadowColor === 'undefined') {
-  StageTextShadowColor = '';
-}
-if (typeof StageImageSmall === 'undefined') {
-  StageImageSmall = '';
-}
-if (typeof StageImageMedium === 'undefined') {
-  StageImageMedium = '';
-}
-if (typeof StageImageLarge === 'undefined') {
-  StageImageLarge = '';
-}
+const {
+  StageImageLarge = '',
+  StageImageMedium = '',
+  StageImageSmall = '',
+  StageTextShadowColor,
+  UseDefaultStageImages,
+} = data;
 
 function createStageImgUrl(url) {
-  var stageImageCSSStart = '#stage-content {background-image: url("';
-  var stageImageCSSEnd = '");}';
-  return stageImageCSSStart + url + stageImageCSSEnd;
+  return `#stage-content {background-image: url('${url}')}`;
 }
+%>
+<style>
 
+<%
 if (UseDefaultStageImages && UseDefaultStageImages !== 'none') {
 %>
 

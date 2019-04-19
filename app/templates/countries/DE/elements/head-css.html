@@ -4,7 +4,7 @@
 const {
   _templateFile,
   AdditionalCriticalPathCssFile = [],
-  Stage = 0,
+  Stage,
 } = data;
 %>
 
@@ -39,7 +39,7 @@ if (_templateFile === 'home-page.html') {
 if (Stage) {
 %>
 
-<%- include('./stage-css.html', Stage) %>
+<%- include('./stage-css.html', {data: Stage}) %>
 
 <%
 };

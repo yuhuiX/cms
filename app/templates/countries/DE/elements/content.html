@@ -1,11 +1,25 @@
 <!-- content.html start -->
 
+<%
+const {
+  AnchorContent = [],
+  HeadlineH2,
+  SeoContent = [],
+} = data;
+%>
+
 <div id="content">
 
   <section id="process-messages"></section>
   <section id="result-list" class="step2 padding-top"></section>
 
-<%- include('./content-section.html') %>
+<%- include('./content-section.html', {
+  data: {
+    AnchorContent,
+    HeadlineH2,
+    SeoContent,
+  }
+}) %>
 
   <!-- ========== DETAIL PAGE ==========-->
   <section id="detail-page-content" class="step3"></section>
