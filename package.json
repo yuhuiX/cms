@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "clean-css": "4.1.11",
-    "eslint": "4.13.1",
-    "eslint-config-google": "0.9.1"
+    "eslint": "5.16.0",
+    "eslint-config-google": "0.12.0"
   }
 }
